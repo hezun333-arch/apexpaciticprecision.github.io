@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Pacific Precision - Precision Manufacturing & Supply Chain Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #0f3460;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            color: #ffd700;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            font-size: 1.05em;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: #ffd700;
+            color: #1a1a2e;
+        }
+
+        .btn-primary:hover {
+            background: #ffed4e;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #1a1a2e;
+            transform: translateY(-3px);
+        }
+
+        /* Key Benefits */
+        .benefits {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .benefits-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.3em;
+            margin-bottom: 60px;
+            color: #1a1a2e;
+            font-weight: 700;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        @media (max-width: 1200px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .benefit-card {
+            background: #f9f9f9;
+            padding: 35px 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            text-align: center;
+            border-top: 4px solid #ffd700;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .benefit-icon {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .benefit-card h3 {
+            color: #1a1a2e;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+
+        .benefit-card p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* Services */
+        .services {
+            padding: 80px 20px;
+            background: #f5f5f5;
+        }
+
+        .services-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 968px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            border-top: 5px solid #ffd700;
+            transition: all 0.3s;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .service-icon {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .service-card h4 {
+            color: #1a1a2e;
+            font-size: 1.4em;
+            margin: 15px 0 20px;
+            font-weight: 700;
+        }
+
+        .service-card ul {
+            list-style: none;
+            text-align: left;
+            color: #666;
+        }
+
+        .service-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.95em;
+        }
+
+        .service-card li:last-child {
+            border-bottom: none;
+        }
+
+        /* ROI Section */
+        .roi-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+        }
+
+        .roi-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .roi-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .roi-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .roi-item {
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid #ffd700;
+        }
+
+        .roi-number {
+            font-size: 2.8em;
+            color: #ffd700;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .roi-label {
+            font-size: 1.05em;
+            color: #e0e0e0;
+            font-weight: 600;
+        }
+
+        /* Case Studies */
+        .case-studies {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .case-studies-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .case-study {
+            background: #f9f9f9;
+            padding: 35px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #ffd700;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .case-study h4 {
+            color: #1a1a2e;
+            margin-bottom: 12px;
+            font-size: 1.25em;
+            font-weight: 700;
+        }
+
+        .case-study p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .case-study-result {
+            color: #ffd700;
+            font-weight: 600;
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 20px;
+            background: #f5f5f5;
+        }
+
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: flex-start;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 968px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .contact-info {
+            background: white;
+            padding: 40px 35px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            border-top: 5px solid #ffd700;
+        }
+
+        .contact-info h4 {
+            color: #1a1a2e;
+            margin-bottom: 25px;
+            font-size: 1.35em;
+            font-weight: 700;
+        }
+
+        .contact-item {
+            margin-bottom: 25px;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            font-size: 1.8em;
+            color: #ffd700;
+            min-width: 30px;
+        }
+
+        .contact-item-text {
+            color: #666;
+        }
+
+        .contact-item-text strong {
+            color: #1a1a2e;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px 35px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            border-top: 5px solid #ffd700;
+        }
+
+        .contact-form h4 {
+            color: #1a1a2e;
+            margin-bottom: 25px;
+            font-size: 1.35em;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #1a1a2e;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.95em;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #ffd700;
+            box-shadow: 0 0 8px rgba(255, 215, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f3460;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2em;
+            }
+
+            .section-title {
+                font-size: 1.8em;
+            }
+
+            .logo {
+                font-size: 1.8em;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">⚙️ APEX PACIFIC PRECISION</div>
+            
+            <p style="font-size: 0.95em; margin-top: 10px;">Custom Manufacturing | Global Sourcing | Supply Chain Solutions</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#benefits">Why Choose Us</a></li>
+            <li><a href="#services">Core Services</a></li>
+            <li><a href="#roi">Results</a></li>
+            <li><a href="#cases">Case Studies</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Reduce Your Component Costs by 15-30% With Asian Supply Chain Solutions</h1>
+            <div class="hero-subtitle">Professional Precision Manufacturing • Global Sourcing Network • Supply Chain Integration</div>
+            <p class="hero-description">
+                Helping U.S. manufacturers in precision machining, metal materials, and aerospace industries<br/>
+                lower component sourcing costs without compromising quality
+            </p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get Free Quote</a>
+                <a href="tel:+16264642606" class="btn btn-secondary">Call (626) 464-2606</a>
+            </div>
+            <p style="font-size: 0.85em; color: #b8b8b8; margin-top: 30px;">*Cost reduction results depend on your current supply chain, order volume, and product specifications. Individual results may vary.</p>
+        </div>
+    </section>
+
+    <!-- Key Benefits -->
+    <section class="benefits" id="benefits">
+        <div class="benefits-content">
+            <h2 class="section-title">Why Choose Us</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <span class="benefit-icon">💰</span>
+                    <h3>Lower Procurement Costs</h3>
+                    <p>Direct sourcing from qualified Asian suppliers reduces component costs by 15-30%, boosting profit margins significantly</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">⚡</span>
+                    <h3>Faster Delivery Times</h3>
+                    <p>Partnerships with multiple precision manufacturers enable emergency orders and reduce lead times by 30% on average</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">✅</span>
+                    <h3>Strict Quality Assurance</h3>
+                    <p>Complete traceability systems and AS9100 certification support ensure >99% on-time delivery and defect-free products</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">📊</span>
+                    <h3>Supply Chain Visibility</h3>
+                    <p>Real-time inventory tracking, automated RFQ systems, and data-driven decisions reduce working capital requirements</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🤝</span>
+                    <h3>Dedicated Support</h3>
+                    <p>Founder-level service with 10+ years of industry experience. You get a strategic partner, not just a vendor</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🌍</span>
+                    <h3>Global Sourcing Network</h3>
+                    <p>Integrated supply chain spanning China, Vietnam, and Thailand. We identify the best supplier for your needs</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">📦</span>
+                    <h3>Integrated Logistics</h3>
+                    <p>End-to-end supply chain management from factory to warehouse. JIT delivery support reduces inventory carrying costs</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🎯</span>
+                    <h3>Customized Solutions</h3>
+                    <p>We tailor our services to your industry and scale. Rapid adaptation to changing business requirements</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="services-content">
+            <h2 class="section-title">Core Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">🔧</span>
+                    <h4>Precision Machining Services</h4>
+                    <ul>
+                        <li>✓ CNC Machining (turning & milling)</li>
+                        <li>✓ Precision Casting</li>
+                        <li>✓ Forging Services</li>
+                        <li>✓ Surface Treatment & Coating</li>
+                        <li>✓ Quality Inspection & Certification</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🌐</span>
+                    <h4>Global Procurement Support</h4>
+                    <ul>
+                        <li>✓ Supplier Evaluation & Certification</li>
+                        <li>✓ Fast RFQ & Quotation</li>
+                        <li>✓ Purchase Order Management & Tracking</li>
+                        <li>✓ Quality Control & Acceptance Inspection</li>
+                        <li>✓ Logistics & Customs Clearance Coordination</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">📦</span>
+                    <h4>Supply Chain Solutions</h4>
+                    <ul>
+                        <li>✓ Inventory Optimization</li>
+                        <li>✓ JIT (Just-In-Time) Delivery</li>
+                        <li>✓ Cost Analysis & Reduction</li>
+                        <li>✓ Supplier Relationship Management</li>
+                        <li>✓ Supply Chain Risk Mitigation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Section -->
+    <section class="roi-section" id="roi">
+        <div class="roi-content">
+            <h2 class="section-title" style="color: white;">Proven Results</h2>
+            <p style="text-align: center; margin-bottom: 15px; font-size: 1.1em; color: #e0e0e0;">Based on partnerships with precision manufacturers, material suppliers, and aerospace companies</p>
+            <p style="text-align: center; margin-bottom: 30px; font-size: 0.9em; color: #b8b8b8; font-style: italic;">*Results vary based on industry, company size, and current supply chain setup. These figures represent typical outcomes, not guaranteed results.</p>
+            <div class="roi-grid">
+                <div class="roi-item">
+                    <div class="roi-number">15-30%</div>
+                    <div class="roi-label">Cost Reduction</div>
+                </div>
+                <div class="roi-item">
+                    <div class="roi-number">30%</div>
+                    <div class="roi-label">Faster Lead Times</div>
+                </div>
+                <div class="roi-item">
+                    <div class="roi-number">40%</div>
+                    <div class="roi-label">Lower Defect Rates</div>
+                </div>
+                <div class="roi-item">
+                    <div class="roi-number">300%+</div>
+                    <div class="roi-label">Year 1 ROI</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="case-studies" id="cases">
+        <div class="case-studies-content">
+            <h2 class="section-title">Case Studies</h2>
+            <p style="text-align: center; margin-bottom: 30px; font-size: 0.9em; color: #666; font-style: italic;">*Examples of successful engagements. Individual results vary based on industry, company circumstances, and engagement scope.</p>
+            <div class="case-study">
+                <h4>Precision Machining Company | Cost Optimization</h4>
+                <p>A 50+ employee precision machine shop achieved significant improvements through our supply chain integration:</p>
+                <div class="case-study-result">
+                    ✓ Component sourcing cost reduced by 22%  |  ✓ Inventory turnover increased 45%  |  ✓ Lead time shortened from 45 to 30 days
+                </div>
+            </div>
+            <div class="case-study">
+                <h4>Metal Material Supplier | Supply Chain Digitalization</h4>
+                <p>A specialty alloy supplier streamlined operations with our inventory management and procurement platform:</p>
+                <div class="case-study-result">
+                    ✓ JIT delivery accuracy rate: 99.2%  |  ✓ Procurement analysis time reduced 80%  |  ✓ Supplier management efficiency improved 3x
+                </div>
+            </div>
+            <div class="case-study">
+                <h4>Aerospace Parts Manufacturer | Quality System Implementation</h4>
+                <p>An aerospace parts supplier achieved AS9100 certification with our quality management support:</p>
+                <div class="case-study-result">
+                    ✓ AS9100 certification timeline compressed by 6 months  |  ✓ Inspection pass rate improved from 97% to 99.5%  |  ✓ Quality cost reduced by 35%
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-content">
+            <h2 class="section-title">Let's Get Started</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h4>📞 Direct Contact</h4>
+                    <div class="contact-item">
+                        <div class="contact-icon">☎️</div>
+                        <div class="contact-item-text">
+                            <strong>Phone</strong>
+                            +1 (626) 464-2606
+                            <span style="font-size: 0.85em; color: #999;">Monday-Friday, 9AM-6PM PST</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-item-text">
+                            <strong>Email</strong>
+                            henry@apexpaciticprecision.com
+                            <span style="font-size: 0.85em; color: #999;">Response within 24 hours</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🌐</div>
+                        <div class="contact-item-text">
+                            <strong>Website</strong>
+                            www.apexpaciticprecision.com
+                        </div>
+                    </div>
+                    <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid #ffd700;">
+                        <h4 style="margin-bottom: 15px; font-size: 1.1em;">💡 Our Expertise</h4>
+                        <ul style="color: #666; line-height: 1.9; font-size: 0.95em;">
+                            <li>✓ Procurement cost analysis & optimization</li>
+                            <li>✓ Supplier vetting & qualification</li>
+                            <li>✓ Quality management systems consulting</li>
+                            <li>✓ Emergency order capability assessment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h4>📝 Request Consultation</h4>
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="company">Company Name *</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="industry">Industry</label>
+                            <select id="industry" name="industry">
+                                <option value="">-- Select Industry --</option>
+                                <option value="precision-machining">Precision Machining & Manufacturing</option>
+                                <option value="metal-materials">Specialty Metals & Materials</option>
+                                <option value="industrial-services">Industrial Services</option>
+                                <option value="aerospace">Aerospace & Defense</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Request *</label>
+                            <textarea id="message" name="message" required placeholder="Describe your procurement challenges, cost concerns, or supply chain needs..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Apex Pacific Precision LLC | Custom Manufacturing | Global Sourcing | Supply Chain Solutions</p>
+        <p>We look forward to becoming your trusted supply chain partner.</p>
+        <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 0.85em;">
+            <p><a href="#legal" style="color: #ffd700; text-decoration: none;">Privacy Policy</a> |
+               <a href="#legal" style="color: #ffd700; text-decoration: none;">Terms of Service</a> |
+               <a href="#legal" style="color: #ffd700; text-decoration: none;">Disclaimer</a></p>
+            <p style="margin-top: 10px; color: #b8b8b8;">
+                <strong>Disclaimer:</strong> The results, data, and case studies presented are based on typical outcomes and individual experiences may vary.
+                This website is for informational purposes only and does not constitute a binding agreement or guarantee of specific results.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Legal Section (Hidden but accessible) -->
+    <section id="legal" style="display: none; padding: 40px 20px; background: white; font-size: 0.9em; line-height: 1.8; color: #333;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h3>Privacy Policy, Terms of Service & Disclaimer</h3>
+            <p style="margin-top: 20px;"><strong>1. Data Collection & Privacy:</strong> By submitting the contact form, you consent to us collecting your name, email, phone, company, and inquiry details. We use this information solely to respond to your inquiry and provide services. We do not sell or share your data with third parties. You may request deletion of your data at any time.</p>
+            <p><strong>2. CAN-SPAM Compliance:</strong> All email communications comply with U.S. CAN-SPAM Act regulations. You have the right to opt-out of marketing emails at any time. Physical Address: Apex Pacific Precision LLC, United States.</p>
+            <p><strong>3. Results Disclaimer:</strong> The cost reductions, lead time improvements, and ROI figures presented (15-30% cost reduction, 300%+ ROI, etc.) are typical outcomes based on client partnerships. Actual results depend on your specific industry, company size, current supply chain setup, order volume, and other factors. We make no guarantee of specific results.</p>
+            <p><strong>4. Case Studies:</strong> Case studies represent examples of successful engagements but are not representative of all outcomes. Results will vary significantly based on individual circumstances.</p>
+            <p><strong>5. Limitation of Liability:</strong> Apex Pacific Precision LLC shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of this website or services.</p>
+            <p><strong>6. GDPR Compliance:</strong> For EU residents: Your data is processed in accordance with GDPR. You have the right to access, correct, or delete your personal data. Contact us at henry@apexpaciticprecision.com.</p>
+        </div>
+    </section>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+
+            const subject = `New Inquiry - ${data.company}`;
+            const body = `
+Name: ${data.name}
+Company: ${data.company}
+Email: ${data.email}
+Phone: ${data.phone || 'Not provided'}
+Industry: ${data.industry || 'Not selected'}
+
+Request Details:
+${data.message}
+            `.trim();
+
+            const mailtoLink = `mailto:henry@apexpaciticprecision.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+
+            alert('Thank you for your inquiry! We will contact you shortly. If your email client does not open, please call +1 (626) 464-2606');
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
